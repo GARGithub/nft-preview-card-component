@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --font-family: 'Outfit', sans-serif;
+        --font-size: 18px;
+
+        --soft-blue: hsl(215, 51%, 70%);
+        --cyan: hsl(178, 100%, 50%);
+
+        --very-dark-blue-main-background: hsl(217, 54%, 11%);
+        --very-dark-blue-card-background: hsl(216, 50%, 16%);
+        --very-dark-blue-separator: hsl(215, 32%, 27%);
+        --white: hsl(0, 0%, 100%);
+      }
+
+      *,
+      *:before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-family: var(--font-family);
+        font-size: var(--font-size);
+      }
+
+      main {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--very-dark-blue-main-background);
+      }
+
+      .card {
+        width: 90vw;
+        max-width: 375px;
+        background-color: var(--very-dark-blue-card-background);
+        padding: 1.5rem;
+        border-radius: 1rem;
+      }
+
+      .card-header img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.6rem;
+      }
+
+      .card-header .title {
+        font-size: 1.5rem;
+        line-height: 4rem;
+        color: var(--white);
+      }
+
+      .card-body {
+        display: grid;
+        row-gap: 1rem;
+        margin-bottom: 1rem;
+        grid-template-areas:
+          'description description'
+          'coin date';
+      }
+
+      .card .description {
+        grid-area: description;
+        font-weight: 300;
+        line-height: 1.5rem;
+        color: var(--soft-blue);
+      }
+
+      .card .coin {
+        grid-area: coin;
+        font-weight: 600;
+        color: var(--cyan);
+      }
+
+      .card .date {
+        grid-area: date;
+        justify-self: end;
+        font-weight: 400;
+        color: var(--soft-blue);
+      }
+
+      .card-footer {
+        display: flex;
+        align-items: center;
+        padding-top: 1rem;
+        border-top: 1px solid var(--very-dark-blue-separator);
+        color: var(--soft-blue);
+      }
+
+      .avatar {
+        width: 38px;
+        border: 1px solid var(--white);
+        border-radius: 50%;
+      }
+
+      .card-footer p {
+        padding-left: 1rem;
+      }
+
+      .card-footer span {
+        color: var(--white);
+      }
+
+      /* .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      } */
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <header class="card-header">
+          <img src="./images/image-equilibrium.jpg" alt="" />
+          <h1 class="title">Equilibrium #3429</h1>
+        </header>
+        <div class="card-body">
+          <p class="description">
+            Our Equilibrium collection promotes balance and calm.
+          </p>
+          <p class="coin">
+            <svg width="11" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11 10.216 5.5 18 0 10.216l5.5 3.263 5.5-3.262ZM5.5 0l5.496 9.169L5.5 12.43 0 9.17 5.5 0Z"
+                fill="#00FFF8"
+              />
+            </svg>
+            0.041 ETH
+          </p>
+          <p class="date">
+            <svg width="17" height="17" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M8.305 2.007a6.667 6.667 0 1 0 0 13.334 6.667 6.667 0 0 0 0-13.334Zm2.667 7.334H8.305a.667.667 0 0 1-.667-.667V6.007a.667.667 0 0 1 1.334 0v2h2a.667.667 0 0 1 0 1.334Z"
+                fill="#8BACD9"
+              />
+            </svg>
+            3 days left
+          </p>
+        </div>
+        <footer class="card-footer">
+          <img class="avatar" src="./images/image-avatar.png" alt="" />
+          <p>Creation of <span>Jules Wyvern</span></p>
+        </footer>
+      </div>
+    </main>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
+</html>
